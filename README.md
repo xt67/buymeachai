@@ -40,17 +40,24 @@ cd buymeachai
 
 ## 🔗 Add to Your Project
 
-Add this badge to your README:
+### Option 1: Official Button (Recommended)
 
 ```markdown
 <a href="https://xt67.github.io/buymeachai/support.html?name=YOUR_NAME&upi=YOUR_UPI_ID">
-  <img src="https://img.shields.io/badge/Buy%20me%20a%20chai-☕-FFDD00?style=for-the-badge" alt="Buy Me A Chai">
+  <img src="https://raw.githubusercontent.com/xt67/buymeachai/master/button.svg" alt="Buy Me A Chai" height="50">
 </a>
 ```
 
-Or use HTML:
-```html
-<a href="https://xt67.github.io/buymeachai/support.html?name=YOUR_NAME&upi=YOUR_UPI_ID" target="_blank">
+**Preview:**
+
+<a href="https://xt67.github.io/buymeachai/support.html?name=Demo&upi=demo@upi">
+  <img src="button.svg" alt="Buy Me A Chai" height="50">
+</a>
+
+### Option 2: Shields.io Badge
+
+```markdown
+<a href="https://xt67.github.io/buymeachai/support.html?name=YOUR_NAME&upi=YOUR_UPI_ID">
   <img src="https://img.shields.io/badge/Buy%20me%20a%20chai-☕-FFDD00?style=for-the-badge" alt="Buy Me A Chai">
 </a>
 ```

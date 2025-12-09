@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="217" height="60" viewBox="0 0 217 60">
+  <!-- Background -->
+  <rect width="217" height="60" rx="12" ry="12" fill="#FFDD00"/>
+  
+  <!-- Chai Glass Icon -->
+  <g transform="translate(15, 8)">
+    <!-- Glass outline -->
+    <path d="M8 5 L10 38 C10 42 30 42 30 38 L32 5 Z" fill="#fff" stroke="#D4A574" stroke-width="1.5"/>
+    <!-- Chai liquid -->
+    <path d="M10 10 L12 35 C12 37 28 37 28 35 L30 10 Z" fill="#FF8C00"/>
+    <!-- Liquid detail lines -->
+    <line x1="14" y1="12" x2="15" y2="33" stroke="#E67300" stroke-width="1" opacity="0.5"/>
+    <line x1="19" y1="11" x2="20" y2="34" stroke="#E67300" stroke-width="1" opacity="0.5"/>
+    <line x1="24" y1="12" x2="25" y2="33" stroke="#E67300" stroke-width="1" opacity="0.5"/>
+    <!-- Steam -->
+    <path d="M15 3 Q12 0 15 -3" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M20 2 Q17 -2 20 -5" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M25 3 Q22 0 25 -3" fill="none" stroke="#666" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="58" y="37" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#000">Buy me a chai</text>
+</svg>
