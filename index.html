@@ -243,7 +243,10 @@
                     <p class="hint">Your UPI ID should be in the format <a href="#">username@bank</a></p>
                 </div>
 
-                <button type="submit" class="btn">Get My Badge Code ☕</button>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button type="submit" class="btn" style="flex: 1; min-width: 150px;">📎 Get Badge Code</button>
+                    <button type="button" id="qrBtn" class="btn" style="flex: 1; min-width: 150px; background: #3d4f4f;">☕ Get QR Page</button>
+                </div>
             </form>
 
             <div id="badgeSection" style="display: none; margin-top: 30px; padding-top: 30px; border-top: 1px solid #e5e7eb;">
@@ -310,40 +313,62 @@
     </footer>
 
     <script>
-        document.getElementById('chaiForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
+        function validateForm() {
             const name = document.getElementById('name').value.trim();
             const upi = document.getElementById('upi').value.trim();
             
-            if (name && upi) {
-                if (!upi.includes('@')) {
-                    alert('Please enter a valid UPI ID (e.g., yourname@bank)');
-                    return;
-                }
-                
-                const supportUrl = `https://xt67.github.io/buymeachai/support.html?name=${encodeURIComponent(name)}&upi=${encodeURIComponent(upi)}`;
-                const badgeUrl = 'https://raw.githubusercontent.com/xt67/buymeachai/master/button.svg';
-                
-                // README badge code
-                const badgeCode = `<a href="${supportUrl}" target="_blank"><img src="${badgeUrl}" alt="Buy Me A Chai" height="50"></a>`;
-                
-                // Widget code (one line!)
-                const widgetCode = `<script src="https://xt67.github.io/buymeachai/widget.js" data-name="${name}" data-upi="${upi}"><\/script>`;
-                
-                // HTML button code
-                const htmlCode = `<a href="${supportUrl}" target="_blank" style="display:inline-block;padding:12px 24px;background:#FFDD00;color:#1a1a1a;border-radius:8px;text-decoration:none;font-family:sans-serif;font-weight:600;">☕ Buy me a chai</a>`;
-                
-                document.getElementById('badgeCode').textContent = badgeCode;
-                document.getElementById('widgetCode').textContent = widgetCode;
-                document.getElementById('htmlCode').textContent = htmlCode;
-                document.getElementById('badgePreview').innerHTML = `<a href="${supportUrl}" target="_blank"><img src="button.svg" alt="Buy Me A Chai" height="50"></a>`;
-                document.getElementById('badgeSection').style.display = 'block';
-                document.getElementById('visitPageBtn').href = supportUrl;
-                
-                // Scroll to badge section
-                document.getElementById('badgeSection').scrollIntoView({ behavior: 'smooth' });
+            if (!name || !upi) {
+                alert('Please enter both name and UPI ID');
+                return null;
             }
+            
+            if (!upi.includes('@')) {
+                alert('Please enter a valid UPI ID (e.g., yourname@bank)');
+                return null;
+            }
+            
+            return { name, upi };
+        }
+        
+        // Get Badge Code button
+        document.getElementById('chaiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const data = validateForm();
+            if (!data) return;
+            
+            const { name, upi } = data;
+            const supportUrl = `https://xt67.github.io/buymeachai/support.html?name=${encodeURIComponent(name)}&upi=${encodeURIComponent(upi)}`;
+            const badgeUrl = 'https://raw.githubusercontent.com/xt67/buymeachai/master/button.svg';
+            
+            // README badge code
+            const badgeCode = `<a href="${supportUrl}" target="_blank"><img src="${badgeUrl}" alt="Buy Me A Chai" height="50"></a>`;
+            
+            // Widget code (one line!)
+            const widgetCode = `<script src="https://xt67.github.io/buymeachai/widget.js" data-name="${name}" data-upi="${upi}"><\/script>`;
+            
+            // HTML button code
+            const htmlCode = `<a href="${supportUrl}" target="_blank" style="display:inline-block;padding:12px 24px;background:#FFDD00;color:#1a1a1a;border-radius:8px;text-decoration:none;font-family:sans-serif;font-weight:600;">☕ Buy me a chai</a>`;
+            
+            document.getElementById('badgeCode').textContent = badgeCode;
+            document.getElementById('widgetCode').textContent = widgetCode;
+            document.getElementById('htmlCode').textContent = htmlCode;
+            document.getElementById('badgePreview').innerHTML = `<a href="${supportUrl}" target="_blank"><img src="button.svg" alt="Buy Me A Chai" height="50"></a>`;
+            document.getElementById('badgeSection').style.display = 'block';
+            document.getElementById('visitPageBtn').href = supportUrl;
+            
+            // Scroll to badge section
+            document.getElementById('badgeSection').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Get QR Page button - go directly to support page
+        document.getElementById('qrBtn').addEventListener('click', function() {
+            const data = validateForm();
+            if (!data) return;
+            
+            const { name, upi } = data;
+            const supportUrl = `support.html?name=${encodeURIComponent(name)}&upi=${encodeURIComponent(upi)}`;
+            window.location.href = supportUrl;
         });
         
         function showTab(tabName) {
