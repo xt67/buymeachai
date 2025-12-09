@@ -83,11 +83,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 💖 Support
 
-If you find this project useful, consider buying us a chai!
-
-<a href="https://xt67.github.io/buymeachai/support.html?name=Rayyan%20Rahman&upi=onlystudies790-1@oksbi" target="_blank">
-  <img src="https://img.shields.io/badge/Buy%20me%20a%20chai-☕-FFDD00?style=for-the-badge" alt="Buy Me A Chai">
-</a>
+If you find this project useful, give it a ⭐ on GitHub!
 
 ---
 
