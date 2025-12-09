@@ -244,8 +244,8 @@
                 </div>
 
                 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                    <button type="submit" class="btn" style="flex: 1; min-width: 150px;">📎 Get Badge Code</button>
-                    <button type="button" id="qrBtn" class="btn" style="flex: 1; min-width: 150px; background: #3d4f4f;">☕ Get QR Page</button>
+                    <button type="submit" class="btn" style="flex: 1; min-width: 150px;">Get My Badge Code 📎</button>
+                    <button type="button" id="qrBtn" class="btn" style="flex: 1; min-width: 150px; background: #3d4f4f;">Get My QR Page ☕</button>
                 </div>
             </form>
 
@@ -289,8 +289,6 @@
                 
                 <p style="color: #6b7280; font-size: 0.85rem; margin-top: 15px;">Preview:</p>
                 <div id="badgePreview" style="margin-top: 10px;"></div>
-                
-                <a id="visitPageBtn" href="#" target="_blank" class="btn" style="display: inline-block; margin-top: 20px; text-decoration: none; text-align: center;">Visit My Chai Page →</a>
             </div>
         </div>
 
@@ -355,7 +353,6 @@
             document.getElementById('htmlCode').textContent = htmlCode;
             document.getElementById('badgePreview').innerHTML = `<a href="${supportUrl}" target="_blank"><img src="button.svg" alt="Buy Me A Chai" height="50"></a>`;
             document.getElementById('badgeSection').style.display = 'block';
-            document.getElementById('visitPageBtn').href = supportUrl;
             
             // Scroll to badge section
             document.getElementById('badgeSection').scrollIntoView({ behavior: 'smooth' });
