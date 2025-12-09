@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyMeAChai ☕ - Let Your Supporters Buy You a Chai</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f0;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background-color: #3d4f4f;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.8rem;
+            color: #4ade80;
+            margin-bottom: 0.3rem;
+        }
+
+        .logo-emoji {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .tagline {
+            color: #d1d5db;
+            font-size: 1rem;
+        }
+
+        .main-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .card p {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card p a {
+            color: #22c55e;
+            text-decoration: none;
+        }
+
+        .card p a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #9ca3af;
+        }
+
+        .hint {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 6px;
+        }
+
+        .hint a {
+            color: #22c55e;
+            text-decoration: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px 24px;
+            background: #22c55e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #16a34a;
+        }
+
+        .features {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features h2 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .features ul {
+            list-style: none;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .features li {
+            color: #4b5563;
+            padding: 10px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "•";
+            color: #22c55e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #6b7280;
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+        }
+
+        .footer a {
+            color: #22c55e;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 24px;
+            background: white;
+            color: #22c55e;
+            border: 2px solid #22c55e;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            background: #22c55e;
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">BuyMeAChai <span class="logo-emoji">☕</span></h1>
+        <p class="tagline">Let your supporters buy you a chai</p>
+    </header>
+
+    <main class="main-content">
+        <div class="card">
+            <p>Enter your name and <a href="#">UPI ID</a> to create your personalized donation page. Share it with your fans and start receiving support today.</p>
+
+            <form id="chaiForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="upi">Your UPI ID</label>
+                    <input type="text" id="upi" name="upi" placeholder="e.g. yourname@upi" required>
+                    <p class="hint">Your UPI ID should be in the format <a href="#">username@bank</a></p>
+                </div>
+
+                <button type="submit" class="btn">Create My Chai Page</button>
+            </form>
+        </div>
+
+        <div class="features">
+            <h2>Why BuyMeAChai?</h2>
+            <ul>
+                <li>Set up your donation page in seconds</li>
+                <li>Receive payments directly via UPI</li>
+                <li>Share your unique link with your audience</li>
+                <li>No fees, keep 100% of your support</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Love BuyMeAChai? Buy us a chai to keep this platform running for creators everywhere.</p>
+        <a href="support.html?name=Rayyan%20Rahman&upi=onlystudies790-1@oksbi" class="btn-outline">Buy Us a Chai</a>
+        <p style="margin-top: 30px;">
+            <a href="https://github.com/xt67/buymeachai" target="_blank">GitHub</a> • 
+            Made with ❤️ in India
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('chaiForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const upi = document.getElementById('upi').value.trim();
+            
+            if (name && upi) {
+                if (!upi.includes('@')) {
+                    alert('Please enter a valid UPI ID (e.g., yourname@bank)');
+                    return;
+                }
+                
+                const supportUrl = `support.html?name=${encodeURIComponent(name)}&upi=${encodeURIComponent(upi)}`;
+                window.location.href = supportUrl;
+            }
+        });
+    </script>
+</body>
+</html>
